@@ -1,31 +1,28 @@
 import React from 'react'
 import { useState } from 'react'
+import './Upload.css'
 
 const Upload = () => {
   const [image, setImage] = useState(null);
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={e => setImage(e.target.files[0])} />
+    <div className='Upload'>
+      <div className='ButtonSpace'>
+       <input id='file-upload' type="file" accept="image/*" onChange={e => setImage(e.target.files[0])} />
+       <br/>
+        {image && <button onClick={() => uploadImage(image)}>Upload</button>}
+      </div>
 
       {image && (
-        <>
-          {/* Display the selected image on the page */}
-          <img src={URL.createObjectURL(image)} alt="Selected" />
-
-          {/* Or upload the selected image to a server */}
-          <button onClick={() => uploadImage(image)}>Upload</button>
-        </>
+          <img className='UploadedImage' src={URL.createObjectURL(image)} alt="Selected" />
       )}
     </div>
   );
 
   function uploadImage(image) {
-    // Create a FormData object to store the image data
     const data = new FormData();
     data.append('file', image);
   
-    // Use fetch to send the image data to the server
-    // fetch('/upload', {
+    // fetch('/uploadimage', {
     //   method: 'POST',
     //   body: data
     // });

@@ -1,0 +1,33 @@
+.UploadedImage {
+    height: 100px;
+    max-width: 70%;
+    transition: 0.4s;
+    border-radius: 5px;
+    margin-bottom: 120px;
+    border: solid;
+    border-width: 1.5px;
+    border-color: white;
+}
+
+.UploadedImage:hover {
+    height: 300px;
+    border-radius: 15px;
+    margin-bottom: 100px;
+}
+
+.Upload {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 50px;
+}
+
+.ButtonSpace{
+    max-width: 29%;
+    text-align: left;
+}
+
+input {
+    color:black
+}
